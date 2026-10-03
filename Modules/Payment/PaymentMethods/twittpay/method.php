@@ -262,7 +262,7 @@ class method
     /** One POST to the API. JSON in, array out. */
     protected function apiCall($endpoint, $payload)
     {
-        if (trim($this->base_url) === '' || trim($this->api_key) === '') {
+        if (trim($this->api_key) === '') {
             return [];
         }
 
