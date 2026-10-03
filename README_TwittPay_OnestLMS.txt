@@ -15,12 +15,10 @@
 
    1. Add these lines to your .env file:
 
-        TWITTPAY_BASE_URL="https://checkout.twittpay.com"
         TWITTPAY_API_KEY="your api key"
         TWITTPAY_CURRENCY="BDT"
         TWITTPAY_CURRENCY_RATE="120"
 
-      TWITTPAY_BASE_URL is your own gateway address - the API host shown on
       your gateway's developer page. There is no default on purpose.
       TWITTPAY_API_KEY comes from your gateway dashboard, under Brands.
       TWITTPAY_CURRENCY is the currency your course prices are in.

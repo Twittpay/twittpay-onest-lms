@@ -30,7 +30,7 @@ class method
 
         // Endpoint URL and Brand Key come from .env - there is no default on
         // purpose. See the README for the two lines to add.
-        $this->base_url       = (string) env('TWITTPAY_BASE_URL', '');
+        $this->base_url       = 'https://checkout.twittpay.com';
         $this->api_key        = (string) env('TWITTPAY_API_KEY', '');
         $this->store_currency = strtoupper((string) env('TWITTPAY_CURRENCY', 'BDT'));
         $this->currency_rate  = (float) env('TWITTPAY_CURRENCY_RATE', 120);
@@ -243,20 +243,7 @@ class method
      */
     protected function baseUrl()
     {
-        $raw    = rtrim(trim($this->base_url), '/');
-        $scheme = parse_url($raw, PHP_URL_SCHEME);
-        $host   = parse_url($raw, PHP_URL_HOST);
-
-        if (empty($host)) {
-            $host = strtok(ltrim(preg_replace('#^[a-z]+://#i', '', $raw), '/'), '/');
-        }
-
-        if (empty($scheme)) {
-            $scheme = 'https';
-        }
-
-        if (empty($host)) { $host = 'checkout.twittpay.com'; }
-        return 'https://' . $host;
+        return 'https://checkout.twittpay.com';
     }
 
     /** One POST to the API. JSON in, array out. */
